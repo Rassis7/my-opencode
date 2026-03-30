@@ -78,13 +78,6 @@
         "mcp/duckduckgo"
       ]
     },
-    "playwright": {
-      "type": "local",
-      "command": [
-        "npx",
-        "@playwright/mcp@latest"
-      ]
-    },
     "sequential-thinking": {
       "type": "local",
       "command": [
