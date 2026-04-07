@@ -20,21 +20,20 @@
         "task": true,
         "todowrite": true
       }
+    },
+    "plan": {
+      "permission": {
+        "edit": {
+          "*": "deny",
+          "~/.config/opencode/tasks/*": "allow"
+        }
+      }
     }
   },
   "mcp": {
     "langchain": {
       "type": "remote",
       "url": "https://docs.langchain.com/mcp"
-    },
-    "langfuse": {
-      "type": "remote",
-      "url": "http://localhost:3001/api/public/mcp",
-      "enabled": true,
-      "oauth": false,
-      "headers": {
-        "Authorization": "Basic cGstbGYtMjVkN2NlMzUtNmM1YS00NzZmLTgxMDgtY2FlNmUyOTg5YjExOnNrLWxmLTRmYTIwY2I5LWUwYjUtNDEyZS1hM2RmLWYwZTA3ZTllZDJjNg=="
-      }
     },
     "context7": {
       "type": "local",
@@ -78,13 +77,21 @@
         "mcp/duckduckgo"
       ]
     },
-    "sequential-thinking": {
+    "postgres": {
       "type": "local",
       "command": [
-        "npx",
-        "-y",
-        "@modelcontextprotocol/server-sequential-thinking"
-      ]
+        "docker",
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "DATABASE_URI",
+        "crystaldba/postgres-mcp",
+        "--access-mode=unrestricted"
+      ],
+      "environment": {
+        "DATABASE_URI": "{env:DATABASE_URI}"
+      }
     }
   },
   "permission": {
