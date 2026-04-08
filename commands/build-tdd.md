@@ -8,7 +8,8 @@ Execute TDD para: $ARGUMENTS
 Regras obrigatorias:
 
 - Chame `test-automator` para propor/escrever testes primeiro.
-- Chame `backend-developer`, `python-pro` ou `ai-engineer` para implementacao (escolha por stack).
+- Se for uma tarefa sobre back-end, chame `backend-developer`, `python-pro`, `typescript-pro` ou `ai-engineer` para implementacao (escolha por stack).
+- Se for uma tarefa sobre front-end, chame `frontend-developer`, `typescript-pro` para implementacao (escolha por stack e se for front-end).
 - Chame `code-reviewer` no final para validacao de qualidade.
 - Chame `ai-context-documentation-engineer` no final para documentar e atualizar o contexto do projeto sobre o que foi feito
 
