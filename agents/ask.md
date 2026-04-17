@@ -1,10 +1,9 @@
 ---
 description: Project questions, ideas, and clarifications
 mode: primary
-model: openai/gpt-5.4
 temperature: 0.5
 tools:
-  write: true
+  write: false
   edit: false
   bash: true
 ---
