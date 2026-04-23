@@ -1,7 +1,6 @@
 ---
 description: Use this agent when you need to conduct comprehensive code reviews focusing on code quality, security vulnerabilities, and best practices.
 mode: subagent
-model: openai/gpt-5.3-codex
 tools:
   write: true
   edit: false

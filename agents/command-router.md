@@ -1,7 +1,6 @@
 ---
 description: Lightweight command executor that follows command workflows and delegates to subagents.
 mode: subagent
-model: openai/gpt-5.4
 tools:
   read: true
   glob: true
