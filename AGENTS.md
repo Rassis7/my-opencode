@@ -46,13 +46,12 @@
 
 ## Task Management
 
-1. **Plan First**: Write plan to `~/.config/opencode/tasks/todo.md` with checkable items
+1. **Plan First**: Write plan to `~/.config/opencode/tasks/todos/[TASK_NAME][timestamp in number].md` with checkable items
 2. **Verify Plan**: Check in before starting implementation
 3. **Track Progress**: Mark items complete as you go
 4. **Explain Changes**: High-level summary at each step
-5. **Document Results**: Add review section to `~/.config/opencode/tasks/todo.md`
-6. **Capture Lessons**: Update `~/.config/opencode/tasks/lessons.md` after corrections
-7. **Delete todo.md**: Delete `~/.config/opencode/tasks/todo.md` after all tasks finished
+5. **Document Results**: Add review section to `~/.config/opencode/tasks/todos/[TASK_NAME][timestamp in number].md`
+6. **Capture Lessons**: Update `~/.config/opencode/tasks/lessons.md` after any corrections
 
 ---
 
