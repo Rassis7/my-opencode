@@ -1,5 +1,6 @@
 # Memory Log Rules
 
+- Use the shell command `$ date` to get current date and time
 - Use one file per day named `YYYY-MM-DD.md`.
 - Append only. Never overwrite or rewrite past entries.
 - Each entry should start with `## HH:MM -- <task title>` and briefly state what changed, why, and any decisions.
