@@ -16,10 +16,10 @@
 
 ### 3. Self-Improvement Loop
 
-- After ANY correction from the user: update `~/.config/opencode/tasks/lessons.md` with the pattern
+- After ANY correction from the user: update `~/.config/opencode/records/memory/YYYY-MM-DD.md` with the pattern
 - Write rules for yourself that prevent the same mistake
-- Ruthlessly iterate on these lessons until mistake rate drops
-- Review lessons at session start for relevant project
+- Ruthlessly iterate on these memory entries until mistake rate drops
+- Review recent memory entries at session start for relevant project
 
 ### 4. Verification Before Done
 
@@ -46,12 +46,12 @@
 
 ## Task Management
 
-1. **Plan First**: Write plan to `~/.config/opencode/tasks/todos/[TASK_NAME][timestamp in number].md` with checkable items
+1. **Plan First**: Write plan to `~/.config/opencode/records/tasks/[TASK_NAME][timestamp in number].md` with checkable items
 2. **Verify Plan**: Check in before starting implementation
 3. **Track Progress**: Mark items complete as you go
 4. **Explain Changes**: High-level summary at each step
-5. **Document Results**: Add review section to `~/.config/opencode/tasks/todos/[TASK_NAME][timestamp in number].md`
-6. **Capture Lessons**: Update `~/.config/opencode/tasks/lessons.md` after any task
+5. **Document Results**: Add review section to `~/.config/opencode/records/tasks/[TASK_NAME][timestamp in number].md`
+6. **Capture Memory**: Update `~/.config/opencode/records/memory/YYYY-MM-DD.md` after any task, following `records/memory/AGENTS.md`
 
 ---
 

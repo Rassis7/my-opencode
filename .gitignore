@@ -1,4 +1,5 @@
 node_modules
 package.json
 bun.lock
-tasks/
+records/**/*.md
+!records/memory/AGENTS.md
