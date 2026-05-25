@@ -37,10 +37,13 @@
     }
   },
   "mcp": {
-    "langchain": {
+    "render": {
       "type": "remote",
-      "url": "https://docs.langchain.com/mcp",
-      "enabled": false
+      "url": "https://mcp.render.com/mcp",
+      "enabled": false,
+      "headers": {
+        "Authorization": "Bearer {env:RENDER_API_KEY}"
+      }
     },
     "context7": {
       "type": "local",
