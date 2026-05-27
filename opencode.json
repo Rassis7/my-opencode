@@ -72,10 +72,7 @@
   },
   "permission": {
     "skill": {
-      "*": "allow",
-      "pr-review": "allow",
-      "internal-*": "allow",
-      "experimental-*": "ask"
+      "*": "allow"
     },
     "external_directory": {
       "~/www/claudinho/**": "allow",
