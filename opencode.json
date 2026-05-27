@@ -9,33 +9,6 @@
   "plugin": [
     "opencode-skills"
   ],
-  "agent": {
-    "command-router": {
-      "mode": "subagent",
-      "tools": {
-        "write": false,
-        "edit": false,
-        "bash": true,
-        "task": true,
-        "todowrite": true
-      }
-    },
-    "plan": {
-      "permission": {
-        "edit": {
-          "*": "deny",
-          "~/.config/opencode/records/*": "allow"
-        }
-      }
-    },
-    "build": {
-      "permission": {
-        "edit": {
-          "*": "allow"
-        }
-      }
-    }
-  },
   "mcp": {
     "render": {
       "type": "remote",
@@ -103,6 +76,16 @@
       "pr-review": "allow",
       "internal-*": "allow",
       "experimental-*": "ask"
+    },
+    "external_directory": {
+      "~/www/claudinho/**": "allow",
+      "~/.config/opencode/tasks/**": "allow",
+      "read": {
+        "*": "allow",
+        "*.env": "deny",
+        "*.env.*": "deny",
+        "*.env.example": "allow"
+      }
     }
   }
 }
