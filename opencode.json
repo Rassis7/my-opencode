@@ -75,14 +75,13 @@
       "*": "allow"
     },
     "external_directory": {
-      "~/www/claudinho/**": "allow",
-      "~/.config/opencode/tasks/**": "allow",
-      "read": {
-        "*": "allow",
-        "*.env": "deny",
-        "*.env.*": "deny",
-        "*.env.example": "allow"
-      }
+      "~/.config/opencode/tasks/**": "allow"
+    },
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow"
     }
   }
 }
