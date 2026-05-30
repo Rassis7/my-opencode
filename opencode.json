@@ -7,17 +7,37 @@
     "skill": true
   },
   "plugin": [
-    "opencode-skills"
+    "opencode-skills",
+    "opencode-vibeguard",
+    "@tarquinen/opencode-dcp@latest",
+    "@ramtinj95/opencode-tokenscope@latest"
   ],
-  "mcp": {
-    "render": {
-      "type": "remote",
-      "url": "https://mcp.render.com/mcp",
-      "enabled": false,
-      "headers": {
-        "Authorization": "Bearer {env:RENDER_API_KEY}"
+  "agent": {
+    "command-router": {
+      "mode": "subagent",
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": true,
+        "task": true,
+        "todowrite": true
       }
     },
+    "plan": {
+      "permission": {
+        "edit": {
+          "*": "deny",
+          "~/.config/opencode/records/*": "allow"
+        }
+      }
+    },
+    "build": {
+      "permission": {
+        "*": "allow"
+      }
+    }
+  },
+  "mcp": {
     "context7": {
       "type": "local",
       "command": [
@@ -66,6 +86,24 @@
       ],
       "environment": {
         "DATABASE_URI": "{env:DATABASE_URI}"
+      },
+      "enabled": false
+    },
+    "render": {
+      "type": "local",
+      "command": [
+        "docker",
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "RENDER_API_KEY",
+        "-v",
+        "render-mcp-server-config:/config",
+        "ghcr.io/render-oss/render-mcp-server"
+      ],
+      "environment": {
+        "RENDER_API_KEY": "{env:RENDER_API_KEY}"
       },
       "enabled": false
     }
