@@ -1,10 +1,9 @@
 ---
 description: Use this agent when you need to diagnose and fix bugs, identify root causes of failures, or analyze error logs and stack traces to resolve issues.
-mode: subagent
-model: openai/gpt-5.3-codex
+mode: primary
 tools:
-  write: true
-  edit: true
+  write: false
+  edit: false
   bash: true
   glob: true
   grep: true
