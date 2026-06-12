@@ -1,96 +1,96 @@
 ---
-description: Abre e cria Pull Requests com base no diff real da branch atual.
+description: Open and create pull requests from the real diff of the current branch
 ---
 
-Crie um Pull Request a partir da branch atual seguindo estas regras exatamente.
+Create a pull request from the current branch following these rules exactly.
 
-## Objetivo
+## Goal
 
-- Identificar a branch base correta da branch atual.
-- Analisar todas as mudancas reais em relacao a base.
-- Encontrar o template de PR do repositorio quando existir.
-- Gerar um titulo descritivo em ingles.
-- Gerar um corpo de PR fiel ao diff real.
-- Adicionar labels apropriadas quando fizer sentido.
-- Criar o Pull Request com `gh pr create`.
-- Retornar o link do Pull Request criado.
+- Identify the correct base branch for the current branch.
+- Analyze all real changes against that base.
+- Find the repository PR template when one exists.
+- Generate a descriptive title in English.
+- Generate a PR body faithful to the real diff.
+- Add appropriate labels when it makes sense.
+- Create the pull request with `gh pr create`.
+- Return the link to the created pull request.
 
-## Regras obrigatorias
+## Mandatory rules
 
-- Leia o `AGENTS.md` na raiz do projeto antes de qualquer outra acao, se ele existir.
-- Descubra a branch atual com `git branch --show-current`.
-- Tente inferir a branch base nesta ordem:
-  1. upstream da branch atual
-  2. branch padrao remota via `origin/HEAD`
-  3. fallback para `origin/main`
-  4. fallback para `origin/master`
-- Confirme o ponto de divergencia com `git merge-base <base> HEAD`.
-- Colete o contexto completo da branch:
+- Read `AGENTS.md` at the project root before anything else, if it exists.
+- Discover the current branch with `git branch --show-current`.
+- Infer the base branch in this order:
+  1. upstream of the current branch
+  2. default remote branch via `origin/HEAD`
+  3. fallback to `origin/main`
+  4. fallback to `origin/master`
+- Confirm the divergence point with `git merge-base <base> HEAD`.
+- Collect full branch context:
   - `git log --oneline <base>..HEAD`
   - `git diff --name-status <base>...HEAD`
   - `git diff <base>...HEAD`
-- Nao invente alteracoes, motivacoes, testes ou impactos. Use apenas o que estiver suportado pelo diff, logs e arquivos do repositorio.
-- Procure um template de PR antes de montar o corpo. Verifique, quando existirem:
+- Do not invent changes, motivations, tests, or impact. Use only what is supported by the diff, logs, and repository files.
+- Look for a PR template before building the body. Check, when they exist:
   - `.github/pull_request_template.md`
   - `.github/PULL_REQUEST_TEMPLATE.md`
   - `.github/pull_request_template/*.md`
   - `.gitlab/merge_request_templates/default.md`
-- Se a branch base nao puder ser inferida com seguranca, pare e pergunte ao usuario qual e a base correta antes de criar o PR.
-- Se nao houver mudancas em relacao a base, nao crie PR. Explique o motivo ao usuario.
-- Se `gh` nao estiver autenticado ou a criacao falhar, explique o erro objetivamente e pare.
+- If the base branch cannot be inferred safely, stop and ask the user for the correct base before creating the PR.
+- If there are no changes against the base, do not create a PR. Explain why to the user.
+- If `gh` is not authenticated or creation fails, explain the error clearly and stop.
 
-## Titulo do PR
+## PR title
 
-- Escreva o titulo em ingles.
-- O titulo deve descrever a mudanca principal da branch.
-- Seja conciso e especifico.
-- Nao use titulos genericos como `update code` ou `fix stuff`.
+- Write the title in English.
+- The title must describe the branch’s main change.
+- Be concise and specific.
+- Do not use generic titles like `update code` or `fix stuff`.
 
 ## Labels
 
-- Adicione labels apropriadas apenas se conseguir inferi-las com seguranca a partir das mudancas e se o repositorio aceitar labels no fluxo com `gh`.
-- Nao invente nomes de labels se nao houver evidencia suficiente.
-- Se nao for possivel aplicar labels com seguranca, crie o PR sem labels e informe isso no final.
+- Add appropriate labels only if you can infer them safely from the changes and the repository accepts labels in the `gh` flow.
+- Do not invent label names without enough evidence.
+- If labels cannot be applied safely, create the PR without labels and say so at the end.
 
-## Corpo do PR
+## PR body
 
-Monte o corpo usando o template do repositorio quando existir.
-Se nao existir template, use exatamente esta estrutura:
+Build the body using the repository template when one exists.
+If there is no template, use exactly this structure:
 
 ```
 ## 🆕 Describe what changed and why
 
-- Liste as principais mudancas reais da branch.
-- Explique as motivacoes com base no diff e no contexto dos commits.
+- List the branch’s main real changes.
+- Explain motivations based on the diff and commit context.
 
 ## 🧪 How to test
 
-- Liste apenas formas de validacao suportadas pelas mudancas encontradas.
-- Se nao houver evidencia suficiente para passos de teste, escreva `Not specified in the branch changes.`
+- List only validation steps supported by the changes found.
+- If there is not enough evidence for test steps, write `Not specified in the branch changes.`
 
 ## 📸 Images/Videos
 
-- Informe `Not applicable.` quando nao houver evidencia de mudancas visuais.
+- Write `Not applicable.` when there is no evidence of visual changes.
 ```
 
-## Execucao
+## Execution
 
-- Verifique o estado atual da branch e se ela possui remoto.
-- Se necessario, publique a branch remota com upstream antes de abrir o PR.
-- Crie o PR com `gh pr create`, definindo:
-  - base correta
-  - titulo em ingles
-  - corpo final
-- Se houver labels confiaveis e suporte no fluxo escolhido, aplique-as.
-- Ao final, responda com:
-  - titulo final
-  - branch base usada
-  - resumo curto do que entrou no PR
-  - link do Pull Request criado
+- Check current branch state and whether it has a remote.
+- If needed, publish the branch with upstream before opening the PR.
+- Create the PR with `gh pr create`, setting:
+  - correct base
+  - title in English
+  - final body
+- If there are reliable labels and support in the chosen flow, apply them.
+- At the end, respond with:
+  - final title
+  - base branch used
+  - short summary of what went into the PR
+  - link to the created pull request
 
-## Restricoes
+## Constraints
 
-- Nao faca suposicoes sem evidencia.
-- Nao omita incertezas: explicite quando algo nao puder ser determinado com confianca.
-- Nao abrir issue, nao fazer merge, nao fazer push forcado.
-- Nao alterar o conteudo do branch alem do que for estritamente necessario para publicar a branch e criar o PR.
+- Do not assume without evidence.
+- Do not hide uncertainty: state clearly when something cannot be determined confidently.
+- Do not open an issue, merge, or force push.
+- Do not change branch content beyond what is strictly needed to publish the branch and create the PR.

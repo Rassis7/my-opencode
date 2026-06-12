@@ -1,54 +1,54 @@
 ---
-description: Analisa mudancas no git e cria um commit no padrao Conventional Commits alinhado ao SEMVER, com titulo curto e descricao em bullets.
+description: Analyze git changes and create a Conventional Commits commit aligned with SEMVER, short title and bullet body
 agent: command-router
 ---
 
 # Do Commit
 
-## O que eu faco
+## What I do
 
-- Analiso as mudancas adicionadas no Git com `git status`.
-- Escolho o tipo de commit seguindo Conventional Commits com impacto SEMVER.
-- Gero e executo um commit com titulo curto e descricao em bullets no formato padrao do projeto.
+- Analyze Git changes with `git status`.
+- Pick the commit type following Conventional Commits with SEMVER impact.
+- Generate and run a commit with a short title and bullet body in the project’s standard format.
 
-## Quando usar
+## When to use
 
-Use esta skill quando voce quiser criar um commit claro e consistente com SEMVER a partir das mudancas atuais da branch.
+Use this command when you want a clear commit consistent with SEMVER from the current branch changes.
 
-## Regras obrigatorias
+## Mandatory rules
 
-1. Ler o `AGENTS.md` na raiz do projeto antes de qualquer acao.
-2. Rodar `git status` para identificar:
-   - arquivos modificados
-   - arquivos novos
-   - arquivos staged/unstaged
-3. Se necessario para detalhar os bullets, inspecionar diffs (`git diff` e `git diff --staged`).
-4. Definir o tipo do commit com base no impacto:
-   - `fix`: correcao sem quebra (PATCH)
-   - `feat`: nova funcionalidade sem quebra (MINOR)
-   - `feat!` ou `BREAKING CHANGE`: mudanca com quebra (MAJOR)
-   - `chore`, `docs`, `refactor`, `test`, `ci`, `build`, `perf`, `style` quando aplicavel
-5. Montar mensagem no formato:
+1. Read `AGENTS.md` at the project root before any action.
+2. Run `git status` to identify:
+   - modified files
+   - new files
+   - staged/unstaged files
+3. If needed for bullet detail, inspect diffs (`git diff` and `git diff --staged`).
+4. Define the commit type from impact:
+   - `fix`: fix without breaking change (PATCH)
+   - `feat`: new feature without breaking change (MINOR)
+   - `feat!` or `BREAKING CHANGE`: breaking change (MAJOR)
+   - `chore`, `docs`, `refactor`, `test`, `ci`, `build`, `perf`, `style` when applicable
+5. Build the message as:
 
-   `[branch-name] <type>: <frase curta>`
+   `[branch-name] <type>: <short phrase>`
 
-   Corpo com bullets objetivos:
-   - o que foi adicionado/alterado
-   - testes criados/ajustados
-   - outros pontos relevantes
+   Body with objective bullets:
+   - what was added/changed
+   - tests created/adjusted
+   - other relevant points
 
-6. Exemplo de saida esperada:
+6. Example of expected output:
 
    `[branch-name] feat: add new role`
    - added role to create user
    - created new tests in XXX.xx
    - anything else
 
-7. Nao incluir arquivos com segredos (ex.: `.env`, `credentials.json`) no commit.
-8. Rodar `git status` apos o commit para validar sucesso.
+7. Do not include secret files (e.g. `.env`, `credentials.json`) in the commit.
+8. Run `git status` after the commit to verify success.
 
-## Observacoes de qualidade
+## Quality notes
 
-- A frase do titulo deve ser curta e direta.
-- O corpo deve explicar o "por que" e o impacto, nao apenas listar arquivos.
-- Manter consistencia com o historico de commits do repositorio quando possivel.
+- The title phrase should be short and direct.
+- The body should explain the “why” and impact, not only list files.
+- Stay consistent with the repository commit history when possible.

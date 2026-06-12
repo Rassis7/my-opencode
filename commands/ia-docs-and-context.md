@@ -1,16 +1,16 @@
 ---
-description: Ajustar documentacao e contexto de IA com Mermaid
+description: Adjust documentation and AI context with Mermaid
 agent: command-router
 ---
 
-Atualize documentacao e contexto de IA para: $ARGUMENTS
+Update documentation and AI context for: $ARGUMENTS
 
-Regras obrigatorias:
-- Chame `documentation-engineer` para estrutura e texto.
-- Chame `software-architect` ou `architect-reviewer` para consistencia de arquitetura.
-- Se houver componentes LLM/RAG/agentes, chame tambem `llm-architect`.
+Mandatory rules:
+- Call `documentation-engineer` for structure and copy.
+- Call `software-architect` or `architect-reviewer` for architecture consistency.
+- If there are LLM/RAG/agent components, also call `llm-architect`.
 
-Entregue:
-- Documentacao atualizada com secoes de contexto para IA (objetivo, limites, fluxos, decisoes).
-- Pelo menos 1 diagrama Mermaid util (arquitetura, sequencia, fluxo ou decisao).
-- Checklist de manutencao para manter docs sincronizadas com codigo.
+Deliver:
+- Updated documentation with AI context sections (goal, limits, flows, decisions).
+- At least one useful Mermaid diagram (architecture, sequence, flow, or decision).
+- A maintenance checklist to keep docs in sync with code.

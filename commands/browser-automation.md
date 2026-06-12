@@ -1,23 +1,23 @@
 ---
-description: Executar automacao de browser com evidencias via playwright-cli
+description: Run browser automation with evidence via playwright-cli
 agent: command-router
 ---
 
-Carregue a skill `playwright-cli` antes de iniciar.
+Load the `playwright-cli` skill before you start.
 
-Execute automacao de browser para: $ARGUMENTS
+Run browser automation for: $ARGUMENTS
 
-Regras obrigatorias:
+Mandatory rules:
 
-- Use os comandos `playwright-cli` da skill carregada para executar o fluxo no browser.
-- Defina ou infira com seguranca: objetivo, URL ou base URL, modo (`anonymous`, `authenticated` ou `auto`), dominios permitidos e criterio de sucesso.
-- Em modo autenticado, use credenciais apenas se elas ja estiverem disponiveis no contexto e nunca exponha segredos na saida.
-- Colete evidencias durante a execucao: snapshot inicial, evidencias de sucesso/falha e console/network quando ajudar no diagnostico.
-- Interrompa o fluxo se surgir CAPTCHA, MFA, SSO inesperado, redirecionamento fora do escopo ou uma acao irreversivel nao autorizada.
+- Use the `playwright-cli` commands from the loaded skill to run the flow in the browser.
+- Define or safely infer: goal, URL or base URL, mode (`anonymous`, `authenticated`, or `auto`), allowed domains, and success criteria.
+- In authenticated mode, use credentials only if they are already available in context and never expose secrets in the output.
+- Collect evidence during the run: initial snapshot, success/failure evidence, and console/network when it helps diagnosis.
+- Stop the flow if CAPTCHA, MFA, unexpected SSO, out-of-scope redirect, or an unauthorized irreversible action appears.
 
-Entregue:
+Deliver:
 
-- Status final: aprovado, reprovado ou inconclusivo.
-- Modo usado, URLs relevantes e passos principais executados.
-- Evidencias coletadas e o que elas comprovam.
-- Bloqueadores, riscos e proxima acao objetiva.
+- Final status: passed, failed, or inconclusive.
+- Mode used, relevant URLs, and main steps executed.
+- Evidence collected and what it proves.
+- Blockers, risks, and the next concrete action.

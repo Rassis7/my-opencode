@@ -1,27 +1,27 @@
 ---
-description: Escrever software com fluxo TDD completo
+description: Write software with a full TDD workflow
 agent: command-router
 ---
 
-Execute TDD para: $ARGUMENTS
+Run TDD for: $ARGUMENTS
 
-Regras obrigatorias:
+Mandatory rules:
 
-- Chame `test-automator` para propor/escrever testes primeiro.
-- Se for uma tarefa sobre back-end, chame `backend-developer`, `python-pro`, `typescript-pro` ou `ai-engineer` para implementacao (escolha por stack).
-- Se for uma tarefa sobre front-end, chame `frontend-developer`, `typescript-pro` para implementacao (escolha por stack e se for front-end).
-- Chame `code-reviewer` no final para validacao de qualidade.
-- Chame `ai-context-documentation-engineer` no final para documentar e atualizar o contexto do projeto sobre o que foi feito
+- Call `test-automator` to propose/write tests first.
+- For back-end work, call `backend-developer`, `python-pro`, `typescript-pro`, or `ai-engineer` for implementation (pick by stack).
+- For front-end work, call `frontend-developer` or `typescript-pro` for implementation (pick by stack).
+- Call `code-reviewer` at the end for quality validation.
+- Call `ai-context-documentation-engineer` at the end to document and refresh project context for what was done
 
-Fluxo estrito:
+Strict flow:
 
-1. Planejar mudanca minima.
-2. Escrever/ajustar testes.
-3. Rodar testes e provar que falham.
-4. Implementar codigo minimo para passar.
-5. Rodar testes e provar que passaram.
-6. Rodar checks relevantes e reportar resultado.
+1. Plan the smallest change.
+2. Write/adjust tests.
+3. Run tests and prove they fail.
+4. Implement the minimum code to pass.
+5. Run tests and prove they pass.
+6. Run relevant checks and report the outcome.
 
-Saida:
+Output:
 
-- O que foi testado, evidencias de falha -> verde, arquivos alterados e riscos residuais.
+- What was tested, evidence of fail → green, files changed, and residual risks.

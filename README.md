@@ -1,26 +1,26 @@
 # OpenCode Config
 
-Repositorio de configuracao pessoal do [OpenCode](https://opencode.ai/docs). Centraliza agentes, skills, comandos e integrações usados pela CLI.
+Personal configuration repository for [OpenCode](https://opencode.ai/docs). Centralizes agents, skills, commands, and integrations used by the CLI.
 
-## Estrutura
+## Layout
 
-| Pasta / Arquivo | O que faz                                                                                                    |
+| Folder / file   | Purpose                                                                                                      |
 | --------------- | ------------------------------------------------------------------------------------------------------------ |
-| `AGENTS.md`     | Regras de workflow e principios para os agentes seguirem neste repositorio                                   |
-| `opencode.json` | Configuracao principal: tools, MCPs, agentes, comandos e permissoes                                          |
-| `agents/`       | Definicoes de agentes customizados com prompts e metadados ([doc](https://opencode.ai/docs/agents))          |
-| `skills/`       | Skills reutilizaveis que encapsulam workflows especificos ([doc](https://opencode.ai/docs/skills))           |
-| `commands/`     | Comandos customizados de slash que orquestram agentes por dominio ([doc](https://opencode.ai/docs/commands)) |
-| `tasks/`        | Arquivos temporarios de planejamento e licoes aprendidas (gerados em runtime)                                |
-| `plugins/`      | Plugin local `opencode-skills` que registra as skills disponiveis ([doc](https://opencode.ai/docs/plugins))  |
+| `AGENTS.md`     | Workflow rules and principles for agents working in this repository                                         |
+| `opencode.json` | Main config: tools, MCPs, agents, commands, and permissions                                                  |
+| `agents/`       | Custom agent definitions with prompts and metadata ([doc](https://opencode.ai/docs/agents))                  |
+| `skills/`       | Reusable skills that encapsulate specific workflows ([doc](https://opencode.ai/docs/skills))                 |
+| `commands/`     | Custom slash commands that orchestrate agents by domain ([doc](https://opencode.ai/docs/commands))            |
+| `tasks/`        | Temporary planning files and lessons learned (generated at runtime)                                          |
+| `plugins/`      | Local `opencode-skills` plugin that registers available skills ([doc](https://opencode.ai/docs/plugins))     |
 
-## MCPs configurados
+## Configured MCPs
 
-Integracoes ativas via `opencode.json` ([doc](https://opencode.ai/docs/mcp)):
+Active integrations via `opencode.json` ([doc](https://opencode.ai/docs/mcp)):
 
-- **langchain** — documentacao LangChain (remoto)
-- **context7** — documentacao de libs via Context7
-- **notion** — leitura e escrita no Notion
-- **fetch** — requisicoes HTTP via Docker convertidas em Markdown
-- **duckduckgo** — busca web via Docker
-- **postgres** — acesso a banco PostgreSQL via Docker
+- **langchain** — LangChain documentation (remote)
+- **context7** — Library documentation via Context7
+- **notion** — Read and write in Notion
+- **fetch** — HTTP requests via Docker converted to Markdown
+- **duckduckgo** — Web search via Docker
+- **postgres** — PostgreSQL database access via Docker

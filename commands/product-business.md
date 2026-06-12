@@ -1,19 +1,19 @@
 ---
-description: Entender negocio e produto com foco em decisao
+description: Understand business and product with a decision focus
 agent: command-router
 ---
 
-Analise negocio e produto para: $ARGUMENTS
+Analyze business and product for: $ARGUMENTS
 
-Regras obrigatorias:
+Mandatory rules:
 
-- Chame pelo menos 2 subagents: `business-analyst` e `product-manager`.
-- Se houver impacto tecnico relevante, chame tambem `software-architect`.
-- Nao implemente codigo nesta etapa.
+- Call at least two subagents: `business-analyst` and `product-manager`.
+- If there is meaningful technical impact, also call `software-architect`.
+- Do not implement code in this step.
 
-Entregue:
+Deliver:
 
-- Problema de negocio, ICP/personas e JTBD.
-- Requisitos priorizados (RICE simplificado) e MVP x fora de escopo.
-- Metricas de sucesso (leading/lagging) e riscos principais.
-- Proxima recomendacao objetiva em ate 5 passos.
+- Business problem, ICP/personas, and JTBD.
+- Prioritized requirements (simplified RICE) and MVP vs out of scope.
+- Success metrics (leading/lagging) and main risks.
+- Next objective recommendation in up to five steps.

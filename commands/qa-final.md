@@ -1,18 +1,18 @@
 ---
-description: Gate final de qualidade antes de merge/release
+description: Final quality gate before merge/release
 agent: command-router
 ---
 
-Execute QA final para: $ARGUMENTS
+Run final QA for: $ARGUMENTS
 
-Regras obrigatorias:
+Mandatory rules:
 
-- Chame `code-reviewer` para revisao tecnica.
-- Chame `test-automator` para estrategia de testes e lacunas.
-- Quando houver risco arquitetural, chame `architect-reviewer`.
+- Call `code-reviewer` for technical review.
+- Call `test-automator` for test strategy and gaps.
+- When there is architectural risk, call `architect-reviewer`.
 
-Entregue:
+Deliver:
 
-- Lista de bloqueadores e nao-bloqueadores.
-- Status de qualidade: aprovado, aprovado com ressalvas, ou reprovado.
-- Proximas acoes objetivas para liberar com seguranca.
+- List of blockers and non-blockers.
+- Quality status: approved, approved with caveats, or rejected.
+- Objective next actions to ship safely.

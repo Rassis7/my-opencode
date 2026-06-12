@@ -1,18 +1,18 @@
 ---
-description: Revisao de codigo com plano de correcao
+description: Code review with remediation plan
 agent: review
 ---
 
-Revise o codigo para: $ARGUMENTS
+Review the code for: $ARGUMENTS
 
-Esta operacao ira:
+This operation will:
 
-1. Analisar a branch atual via `git branch --show-current`
-2. Examinar o diff com `git diff main...HEAD` para identificar stacks
-3. Executar analise em paralelo via especialistas apropriados:
-   - code-reviewer (sempre)
-   - frontend-developer (se arquivos frontend detectados)
-   - backend-developer (se arquivos backend detectados)
-   - ai-engineer (se arquivos AI/ML detectados)
-4. Consolidar achados e gerar plano de correcao via skill create-plan
-5. Retornar resultados no formato padrao
+1. Analyze the current branch via `git branch --show-current`
+2. Inspect the diff with `git diff main...HEAD` to identify stacks
+3. Run analysis in parallel with the appropriate specialists:
+   - code-reviewer (always)
+   - frontend-developer (if frontend files detected)
+   - backend-developer (if backend files detected)
+   - ai-engineer (if AI/ML files detected)
+4. Consolidate findings and generate a remediation plan via the create-plan skill
+5. Return results in the standard format

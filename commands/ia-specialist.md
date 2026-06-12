@@ -1,16 +1,16 @@
 ---
-description: Consultoria especializada para sistemas de IA
+description: Specialized consulting for AI systems
 agent: command-router
 ---
 
-Atue como especialista em IA para: $ARGUMENTS
+Act as an AI specialist for: $ARGUMENTS
 
-Regras obrigatorias:
-- Chame `llm-architect` para desenho de solucao e trade-offs.
-- Chame `ai-engineer` para plano tecnico de implementacao/operacao.
-- Se envolver agentes ou multi-agente, explicite arquitetura, limites e criterios de avaliacao.
+Mandatory rules:
+- Call `llm-architect` for solution design and trade-offs.
+- Call `ai-engineer` for technical implementation/operations plan.
+- If agents or multi-agent setups are involved, spell out architecture, limits, and evaluation criteria.
 
-Entregue:
-- Recomendacao final unica com alternativas consideradas.
-- Trade-offs claros (custo, latencia, qualidade, risco).
-- Plano incremental em fases (POC -> piloto -> producao) com metricas.
+Deliver:
+- One final recommendation with alternatives considered.
+- Clear trade-offs (cost, latency, quality, risk).
+- Incremental phased plan (POC → pilot → production) with metrics.

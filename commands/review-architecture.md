@@ -1,15 +1,15 @@
 ---
-description: Revisao de arquitetura com recomendacao objetiva
+description: Architecture review with an objective recommendation
 agent: command-router
 ---
 
-Revise a arquitetura para: $ARGUMENTS
+Review architecture for: $ARGUMENTS
 
-Regras obrigatorias:
-- Chame `software-architect` para opcoes e recomendacao principal.
-- Chame `architect-reviewer` para validacao independente e riscos.
-- Nao escreva codigo, exceto se a tarefa pedir explicitamente.
+Mandatory rules:
+- Call `software-architect` for options and the main recommendation.
+- Call `architect-reviewer` for independent validation and risks.
+- Do not write code unless the task explicitly asks for it.
 
-Entregue:
-- Opcoes com trade-offs, recomendacao final e risco aceito principal.
-- Plano incremental de adocao e impacto operacional.
+Deliver:
+- Options with trade-offs, final recommendation, and main accepted risk.
+- Incremental adoption plan and operational impact.
