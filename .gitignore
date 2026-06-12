@@ -3,3 +3,9 @@ package.json
 bun.lock
 records/**/*.md
 !records/memory/AGENTS.md
+
+skills/gitlab/*
+skills/slack-review/*
+commands/create-mr.md
+
+.gitignore
