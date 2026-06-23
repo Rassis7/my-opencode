@@ -5,39 +5,39 @@ description: Use when the user asks to ingest, create, update, or lint pages in 
 
 ## Vault
 
-`~/llm-wiki` — Obsidian-compatible markdown vault, independente de ferramenta.
+`~/llm-wiki` — Obsidian-compatible markdown vault, tool-independent.
 
-Leia `SCHEMA.md` antes de qualquer escrita para conferir as convencoes atualizadas.
+Read `SCHEMA.md` before any write to check current conventions.
 
-## Estrutura
+## Structure
 
-| Diretorio | Proposito |
-|-----------|-----------|
-| `memory/` | Aprendizado diario — `YYYY-MM-DD.md`, append-only |
-| `concepts/` | Tecnicas, padroes e principios reutilizaveis |
-| `entities/` | Projetos, servicos, pessoas, times, ferramentas |
-| `raw/` | Fontes imutaveis (artigos, notas, papers, transcricoes) |
-| `summaries/` | Sinteses de fontes |
-| `comparisons/` | Analises lado a lado |
-| `queries/` | Perguntas respondidas pela wiki |
-| `index.md` | Catalogo de todas as paginas por tipo |
-| `log.md` | Registro cronologico append-only de operacoes |
-| `SCHEMA.md` | Convencoes de escrita (frontmatter, tags, wikilinks) |
+| Directory | Purpose |
+|-----------|---------|
+| `memory/` | Daily learning — `YYYY-MM-DD.md`, append-only |
+| `concepts/` | Reusable techniques, patterns, and principles |
+| `entities/` | Projects, services, people, teams, tools |
+| `raw/` | Immutable sources (articles, notes, papers, transcripts) |
+| `summaries/` | Source syntheses |
+| `comparisons/` | Side-by-side analyses |
+| `queries/` | Questions answered by the wiki |
+| `index.md` | Catalog of all pages by type |
+| `log.md` | Chronological append-only operation log |
+| `SCHEMA.md` | Writing conventions (frontmatter, tags, wikilinks) |
 
-## Convencoes (do SCHEMA.md)
+## Conventions (from SCHEMA.md)
 
-- Nomes de arquivo: lowercase, hyphens, sem espacos (`jest-mocking-monorepo.md`)
-- Toda pagina comeca com YAML frontmatter
-- Usar `[[wikilinks]]` para cross-references (minimo 1 link de saida por pagina)
-- Ao atualizar pagina, sempre atualizar `updated` no frontmatter
-- Toda pagina nova deve ser adicionada ao `index.md` na secao correta
-- Toda operacao significativa deve ser appendada ao `log.md`
+- File names: lowercase, hyphens, no spaces (`jest-mocking-monorepo.md`)
+- Every page starts with YAML frontmatter
+- Use `[[wikilinks]]` for cross-references (minimum 1 outbound link per page)
+- When updating a page, always bump `updated` in frontmatter
+- Every new page must be added to `index.md` under the correct section
+- Every significant operation must be appended to `log.md`
 
 ### Frontmatter template
 
 ```yaml
 ---
-title: Titulo da Pagina
+title: Page Title
 created: YYYY-MM-DD
 updated: YYYY-MM-DD
 type: concept | entity | summary | comparison | query
@@ -57,54 +57,54 @@ confidence: low | medium | high
 
 ### Page types
 
-- **concept** — tecnica, padrao ou principio reutilizavel
-- **entity** — projeto, pessoa, time, ferramenta ou servico especifico
-- **summary** — sintese de uma fonte ou topico
-- **comparison** — analise comparativa lado a lado
-- **query** — pergunta respondida pela wiki (pode ser promovida a concept/entity depois)
+- **concept** — reusable technique, pattern, or principle
+- **entity** — specific project, person, team, tool, or service
+- **summary** — synthesis of a source or topic
+- **comparison** — side-by-side analysis
+- **query** — question answered by the wiki (can be promoted to concept/entity later)
 
-## Operacoes
+## Operations
 
 ### Ingest
 
-Quando o usuario fornece uma nova fonte (artigo, doc, transcricao):
+When the user provides a new source (article, doc, transcript):
 
-1. Salve a fonte imutavel em `raw/<categoria>/`
-2. Leia o conteudo e discuta takeaways com o usuario
-3. Crie/atualize paginas em `concepts/` e `entities/` com o conhecimento extraido
-4. Adicione as novas paginas ao `index.md`
-5. Appenda a operacao ao `log.md`
+1. Save the immutable source under `raw/<category>/`
+2. Read the content and discuss takeaways with the user
+3. Create/update pages in `concepts/` and `entities/` with extracted knowledge
+4. Add new pages to `index.md`
+5. Append the operation to `log.md`
 
 ### Memory
 
-Apos QUALQUER correcao do usuario:
+After ANY correction from the user:
 
-1. Use `date` para obter a data atual
-2. Abra ou crie `memory/YYYY-MM-DD.md`
-3. Appenda entrada no formato: `## HH:MM -- <titulo>` com o padrao aprendido
-4. Nunca sobrescreva entradas passadas
+1. Use `date` to get the current date
+2. Open or create `memory/YYYY-MM-DD.md`
+3. Append entry in format: `## HH:MM -- <title>` with the pattern learned
+4. Never overwrite past entries
 
-Apos tarefa nao-trivial:
+After non-trivial task completion:
 
-1. Extraia padroes reutilizaveis
-2. Crie ou atualize paginas em `concepts/` e `entities/`
-3. Atualize `index.md` se houver paginas novas
-4. Appenda ao `log.md`
+1. Extract reusable patterns
+2. Create or update pages in `concepts/` and `entities/`
+3. Update `index.md` if there are new pages
+4. Append to `log.md`
 
 ### Lint
 
-Quando o usuario pedir `/lint` ou revisao da wiki:
+When the user asks for `/lint` or a wiki review:
 
-1. Leia `index.md` para visao geral
-2. Verifique: contradicoes entre paginas, paginas orfas (sem inbound links), conceitos mencionados sem pagina propria, cross-references quebradas, gaps que poderiam ser preenchidos
-3. Reporte os achados e sugira correcoes
-4. Appenda ao `log.md`
+1. Read `index.md` for overview
+2. Check for: contradictions between pages, orphan pages (no inbound links), concepts mentioned but lacking their own page, broken cross-references, gaps that could be filled
+3. Report findings and suggest fixes
+4. Append to `log.md`
 
 ### Query
 
-Quando o usuario perguntar algo que a wiki possa responder:
+When the user asks something the wiki might answer:
 
-1. Leia `index.md` primeiro para encontrar paginas relevantes
-2. Leia as paginas candidatas
-3. Sintetize a resposta com citacoes (`[[wikilinks]]`)
-4. Se a resposta for valiosa, ofereca para arquiva-la como nova pagina na wiki
+1. Read `index.md` first to find relevant pages
+2. Read candidate pages
+3. Synthesize the answer with citations (`[[wikilinks]]`)
+4. If the answer is valuable, offer to file it as a new wiki page
