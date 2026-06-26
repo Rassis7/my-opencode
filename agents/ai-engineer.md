@@ -1,7 +1,6 @@
 ---
 description: Use this agent when architecting, implementing, or optimizing end-to-end AI systems-from model selection and training pipelines to production deployment and monitoring.
 mode: subagent
-model: openai/gpt-5.3-codex
 tools:
   write: false
   edit: false

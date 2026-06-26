@@ -22,19 +22,6 @@
         "task": true,
         "todowrite": true
       }
-    },
-    "plan": {
-      "permission": {
-        "edit": {
-          "*": "deny",
-          "~/.config/opencode/records/*": "allow"
-        }
-      }
-    },
-    "build": {
-      "permission": {
-        "*": "allow"
-      }
     }
   },
   "mcp": {
@@ -106,6 +93,11 @@
         "RENDER_API_KEY": "{env:RENDER_API_KEY}"
       },
       "enabled": false
+    },
+    "supabase": {
+      "type": "remote",
+      "url": "https://mcp.supabase.com/mcp?project_ref=ndhjzoebmtsttbeytxju",
+      "enabled": true
     }
   },
   "permission": {
