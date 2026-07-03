@@ -7,6 +7,10 @@ compatibility: opencode
 
 # Create Plan
 
+## Main Task
+
+Generate a tdd plan to follow request: $ARGUMENTS
+
 ## Overview
 
 Generate a plan by copying the template from `assets/plan-template.md` and filling every `<placeholder>` with task-specific details.

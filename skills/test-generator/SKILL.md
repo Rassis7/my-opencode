@@ -6,6 +6,10 @@ compatibility: opencode
 
 # Test Generator
 
+## Main Task
+
+Create or update tests according to the following request: $ARGUMENTS
+
 ## Workflow
 
 1. Read `AGENTS.md` in the repo root for project context, test framework, conventions, and run commands. Follow any file references it provides — never assume paths like `ai-context/` or `docs/`.
