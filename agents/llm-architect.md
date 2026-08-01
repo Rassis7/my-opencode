@@ -1,7 +1,6 @@
 ---
 description: Use when designing LLM systems for production, implementing fine-tuning or RAG architectures, optimizing inference serving infrastructure, or managing multi-model deployments.
 mode: subagent
-model: openai/gpt-5.3-codex
 tools:
   write: true
   edit: true

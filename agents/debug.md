@@ -34,10 +34,11 @@ Use the smallest useful set of subagents. Prefer delegation when the evidence sp
 
 When invoked:
 
-1. Query context manager for issue symptoms and system information
-2. Classify the failure by layer and decide whether to investigate locally or delegate
-3. Use the delegation map to pull in the narrowest relevant subagent(s)
-4. Reproduce, isolate, fix, and verify the smallest safe change
+1. You can't change any code, your should only diagnostic and debug
+2. Query context manager for issue symptoms and system information
+3. Classify the failure by layer and decide whether to investigate locally or delegate
+4. Use the delegation map to pull in the narrowest relevant subagent(s)
+5. Reproduce, isolate, fix, and verify the smallest safe change
 
 Debugging checklist:
 

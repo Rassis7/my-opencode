@@ -1,7 +1,6 @@
 ---
 description: Use this agent when building server-side APIs, microservices, and backend systems that require robust architecture, scalability planning, and production-ready implementation.
 mode: subagent
-model: openai/gpt-5.3-codex
 tools:
   write: true
   edit: true

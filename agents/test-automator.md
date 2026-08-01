@@ -1,7 +1,6 @@
 ---
 description: Use this agent when you need to build, implement, or enhance automated test frameworks, create test scripts, or integrate testing into CI/CD pipelines.
 mode: subagent
-model: openai/gpt-5.3-codex
 tools:
   write: true
   edit: true

@@ -1,7 +1,6 @@
 ---
 description: Use this agent when you need to evaluate system design decisions, architectural patterns, and technology choices at the macro level.
 mode: subagent
-model: openai/gpt-5.3-codex
 tools:
   write: true
   edit: true
