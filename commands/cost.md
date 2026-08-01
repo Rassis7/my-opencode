@@ -2,7 +2,6 @@
 description: Relatório de custos por provedor, modelo e período (mensal, semanal, diário)
 agent: build
 subtask: true
-model: opencode-go/deepseek-v4-pro
 ---
 
 Resumo financeiro dos provedores configurados no OpenCode.
@@ -32,29 +31,37 @@ Dados de modelos pagos (ignorando modelos com "free" no nome):
 Com base nesses dados, apresente um relatório com TODAS as seções abaixo (não pule nenhuma):
 
 ## 1. 📅 Período da análise
+
 Mostre a data inicial e final dos dados. Se estiver vazio, avise.
 
 ## 2. 📊 Resumo por provedor
+
 Tabela: provider | custo total | msgs | input tokens | output tokens | $/msg
 
 ## 3. 🏆 Top modelos por custo
+
 Ranking: posição | modelo | provider | custo | msgs | input tokens | % do total
 Destaque o top 3 com 🔴, 🟡, 🟢 conforme gravidade.
 
 ## 4. 💰 Custo-fantasma do Go
+
 Valor registrado vs custo fixo de $10/mês. Projeção se o mesmo volume fosse precificado nos outros provedores.
 
 ## 5. 📆 Evolução mensal
+
 Tabela mês a mês: mês | custo | msgs | tokens (M in / K out) | tendência (⬆/⬇)
 
 ## 6. 📊 Últimas 12 semanas
+
 Tabela: semana | custo | msgs | modelo mais usado
 
 ## 7. 📆 Últimos 14 dias
+
 Tabela: data | custo | msgs | modelo mais usado
 Destaque o dia mais caro se houver.
 
 ## 8. 💡 Recomendações
+
 - Top 3 ações de economia com valor estimado
 - Modelos com input tokens inflados (>20K/msg em média)
 - O que está funcionando bem
