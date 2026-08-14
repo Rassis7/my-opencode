@@ -19,6 +19,7 @@
         "write": false,
         "edit": false,
         "bash": true,
+        "question": true,
         "task": true,
         "todowrite": true
       }
@@ -106,7 +107,7 @@
     },
     "supabase": {
       "type": "remote",
-      "url": "https://mcp.supabase.com/mcp?features=docs%2Caccount%2Cdatabase%2Cdebugging%2Cdevelopment%2Cfunctions%2Cbranching",
+      "url": "https://mcp.supabase.com/mcp??project_ref=bejzfhreceediuqgglha&read_only=true",
       "enabled": true
     }
   },

@@ -7,6 +7,7 @@ Personal configuration repository for [OpenCode](https://opencode.ai/docs). Cent
 | Folder / file   | Purpose                                                                                                      |
 | --------------- | ------------------------------------------------------------------------------------------------------------ |
 | `AGENTS.md`     | Workflow rules and principles for agents working in this repository                                         |
+| `CONTEXT/`      | Shared context docs for Codex/OpenCode discovery and resource routing                                       |
 | `opencode.json` | Main config: tools, MCPs, agents, commands, and permissions                                                  |
 | `agents/`       | Custom agent definitions with prompts and metadata ([doc](https://opencode.ai/docs/agents))                  |
 | `skills/`       | Reusable skills that encapsulate specific workflows ([doc](https://opencode.ai/docs/skills))                 |
