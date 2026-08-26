@@ -1,0 +1,7 @@
+interface:
+  display_name: "SDD"
+  short_description: "Transforma features em proposal e spec"
+  default_prompt: "Use $sdd para transformar este pedido de feature em proposal e spec revisáveis."
+
+policy:
+  allow_implicit_invocation: true

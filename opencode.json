@@ -29,7 +29,8 @@
     "sentry": {
       "type": "remote",
       "url": "https://mcp.sentry.dev/mcp",
-      "oauth": {}
+      "oauth": {},
+      "enabled": false
     },
     "context7": {
       "type": "local",
@@ -108,7 +109,7 @@
     "supabase": {
       "type": "remote",
       "url": "https://mcp.supabase.com/mcp??project_ref=bejzfhreceediuqgglha&read_only=true",
-      "enabled": true
+      "enabled": false
     }
   },
   "permission": {

@@ -1,0 +1,7 @@
+interface:
+  display_name: "ADR Builder"
+  short_description: "Conduz decisões arquiteturais até uma ADR"
+  default_prompt: "Use $adr-builder para conduzir e revisar uma nova decisão arquitetural."
+
+policy:
+  allow_implicit_invocation: true

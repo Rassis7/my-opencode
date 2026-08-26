@@ -1,0 +1,7 @@
+interface:
+  display_name: "SDD Code Review"
+  short_description: "Audita proposal e spec antes do código"
+  default_prompt: "Use $sdd-code-review para auditar este pacote proposal.md e spec.md."
+
+policy:
+  allow_implicit_invocation: true
