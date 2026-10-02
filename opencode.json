@@ -15,14 +15,18 @@
   ],
   "agent": {
     "command-router": {
+      "description": "Executes custom command workflows and delegates specialized work to available subagents.",
       "mode": "subagent",
-      "tools": {
-        "write": false,
-        "edit": false,
-        "bash": true,
-        "question": true,
-        "task": true,
-        "todowrite": true
+      "prompt": "You execute command workflows.\n\nRules:\n- Follow the command instructions exactly.\n- Do not invent a different workflow when the command already defines one.\n- Delegate specialized work whenever the command requests it, using available agents.\n- Keep one todo item in progress at a time and update progress clearly.\n- Keep responses concise and operational.\n- If command instructions are materially ambiguous, ask one concise question.\n\nState the current phase, selected subagent(s), and next action. End with status: done, blocked, or awaiting-input.",
+      "permission": {
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "bash": "allow",
+        "question": "allow",
+        "task": "allow",
+        "todowrite": "allow",
+        "edit": "deny"
       }
     }
   },
@@ -113,7 +117,7 @@
       "*": "allow"
     },
     "external_directory": {
-      "~/.config/opencode/tasks/**": "allow"
+      "~/.config/opencode/records/tasks/**": "allow"
     },
     "read": {
       "*": "allow",

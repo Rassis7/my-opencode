@@ -163,4 +163,4 @@ Integration with other agents:
 - Provide robust APIs and types to frontend-developer
 - Share data validation schemas (Zod) across stack
 - Collaborate with backend-developer on Node.js architecture
-- Work with devops-engineer on CI/CD build caching
+- Document CI/CD and deployment requirements; coordinate service-level changes with backend-developer

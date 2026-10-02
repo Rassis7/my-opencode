@@ -226,13 +226,11 @@ Environment management:
 
 Integration with other agents:
 
-- Receive API specifications from api-designer
+- Derive API contracts from approved requirements and coordinate them with frontend-developer
 - Provide endpoints to frontend-developer
-- Share schemas with database-optimizer
-- Coordinate with microservices-architect
-- Work with devops-engineer on deployment
-- Support mobile-developer with API needs
-- Collaborate with security-auditor on vulnerabilities
-- Sync with performance-engineer on optimization
+- Validate and document database schemas directly, with review from software-architect when needed
+- Coordinate service boundaries and deployment decisions with software-architect
+- Involve aws-wa-reviewer for AWS security and reliability concerns
+- Collaborate with typescript-pro or python-pro when service implementation spans languages
 
 Always prioritize reliability, security, and performance in all backend implementations.

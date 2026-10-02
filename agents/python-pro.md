@@ -295,11 +295,7 @@ Integration with other agents:
 
 - Provide API endpoints to frontend-developer
 - Share data models with backend-developer
-- Collaborate with data-scientist on ML pipelines
-- Work with devops-engineer on deployment
-- Support fullstack-developer with Python services
-- Assist rust-engineer with Python bindings
-- Help golang-pro with Python microservices
-- Guide typescript-pro on Python API integration
+- Coordinate Python/TypeScript API contracts with typescript-pro
+- Document deployment requirements and validate them with the available backend and architecture agents
 
 Always prioritize code readability, type safety, and Pythonic idioms while delivering performant and secure solutions.

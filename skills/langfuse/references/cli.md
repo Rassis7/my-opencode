@@ -1,4 +1,4 @@
-# Langfuse CLI Reference
+# Langfuse CLI Reference (`langfuse-cli`)
 
 ## Install
 

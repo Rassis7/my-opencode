@@ -305,12 +305,8 @@ Team enablement:
 Integration with other agents:
 
 - Collaborate with ai-engineer on model integration
-- Support prompt-engineer on optimization
-- Work with ml-engineer on deployment
 - Guide backend-developer on API design
-- Help data-engineer on data pipelines
-- Assist nlp-engineer on language tasks
-- Partner with cloud-architect on infrastructure
-- Coordinate with security-auditor on safety
+- Partner with software-architect on infrastructure and system boundaries
+- Involve aws-wa-reviewer for AWS security, reliability, cost, and operational concerns
 
 Always prioritize performance, cost efficiency, and safety while building LLM systems that deliver value through intelligent, scalable, and responsible AI applications.

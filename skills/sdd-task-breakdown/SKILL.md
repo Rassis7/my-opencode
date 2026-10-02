@@ -3,8 +3,8 @@ name: sdd-task-breakdown
 description: >
   Realiza o breakdown de tarefas (task breakdown) a partir de uma spec SDD previamente
   gerada e aprovada (proposal.md + spec.md), transformando requirements e scenarios em um
-  plano de execucao com disciplina TDD (Test Fails -> Code -> Green). Reaproveita o template
-  da skill create-plan (assets/plan-template.md), mapeia cada requirement em Tasks
+  plano de execucao com disciplina TDD (Test Fails -> Code -> Green), usando a estrutura
+  definida nesta propria skill, mapeia cada requirement em Tasks
   incrementais e independentes, define DoD por task e fecha com Checks Globais e Registro de
   Execucao. Nao implementa codigo e nao altera os artefatos da spec. Use quando o usuario
   pedir para quebrar/planejar as tarefas de uma spec SDD aprovada, gerar o plano de
@@ -19,8 +19,8 @@ Esta e uma skill de workflow que sucede a `sdd-code-review` no pipeline SDD:
 ## O — OBJETIVO
 
 Voce transforma um **pacote de spec SDD aprovado** (`proposal.md` + `spec.md`) em um
-**plano de execucao TDD** (Test Fails -> Code -> Green), seguindo o template canonico da
-skill `create-plan`. O resultado e um `plan.md` com Tasks incrementais e independentes,
+**plano de execucao TDD** (Test Fails -> Code -> Green), seguindo a estrutura definida
+nesta skill. O resultado e um `plan.md` com Tasks incrementais e independentes,
 cada uma com DoD, e um bloco final de Checks Globais e Registro de Execucao.
 
 Voce NAO implementa codigo: entrega apenas o plano pronto para o agente de implementacao.
@@ -54,8 +54,8 @@ achados CRITICAL/MAJOR.
 
 ### Recursos
 
-- Template canonico: `assets/plan-template.md` da skill `create-plan`. Copie a estrutura
-  EXATA, ajustando espacos/acentos para pt-BR quando o template ja nao usar acentos.
+- A estrutura canonica do plano esta definida na secao **Estrutura do plano** desta skill;
+  nao depende de outra skill nem de arquivos externos.
 
 ---
 
@@ -92,7 +92,7 @@ achados CRITICAL/MAJOR.
    pedindo o pacote ou o caminho `specs/<NNN>-<slug>/`.
 2. Ler `proposal.md` (capabilities, high-level changes, success criteria) e `spec.md`
    (requirements, scenarios). Ler `review.md` se existir.
-3. Ler o template canonico da skill `create-plan` (`assets/plan-template.md`) como base.
+3. Aplicar a estrutura canonica definida nesta skill, na secao **Estrutura do plano**.
 4. Anunciar: `Iniciando task breakdown da spec: "<titulo da spec>"`.
 
 ### STAGE 2 — Mapeamento requirements -> Tasks
@@ -209,10 +209,10 @@ Aprovar este plano?
 - Saida em texto plano, marcadores de progresso discretos, sem emojis.
 - Output deterministico: mesma estrutura, mesma ordem de secoes (base no template).
 
-### N6. Reuso do template
+### N6. Estrutura do plano
 
-- A estrutura do `plan.md` segue o template da skill `create-plan`; nao remova secoes e
-  nao deixe `<placeholder>`.
+- A estrutura do `plan.md` segue a secao **Estrutura do plano** desta skill; nao remova
+  secoes obrigatorias e nao deixe `<placeholder>`.
 
 ---
 
@@ -233,10 +233,28 @@ save_path: null           # preenchido so se salvar em disco
 ---
 ```
 
-### Template — plano `plan.md`
+### Estrutura do plano — `plan.md`
 
-Seguir o template canonico da skill `create-plan` (`assets/plan-template.md`),
-preenchendo cada `<placeholder>` com o conteudo derivado da spec:
+Use esta estrutura independente de arquivos externos e preencha cada `<placeholder>` com
+conteudo derivado da spec:
+
+```markdown
+# Plano: <titulo da spec>
+
+## Contexto Rapido
+## Pre Tasks
+## Task 1 - <nome>
+### Test Fails
+### Code
+### Green
+### Notas
+### Definicao de Pronto (DoD)
+## Checks Globais
+## Registro de Execucao
+## Playbook de Atualizacao
+```
+
+Repita o bloco `Task` para cada entrega incremental, mantendo a ordem e dependencias:
 
 - **Contexto Rapido**: Objetivo (success criteria da proposal), Escopo (capabilities
   afetadas), Restricoes (ameaca da spec/tech stack), Definicao de Pronto (cobertura,
@@ -270,8 +288,8 @@ Entrada: pacote `specs/001-notificacao-push-entrega/` (proposal + spec + review)
 
 - **v1.0** — Skill de task breakdown para o pipeline SDD.
   - Entrada: pacote SDD aprovado (proposal + spec [+ review]).
-  - Saida: plano TDD (Test Fails -> Code -> Green) seguindo o template da skill
-    `create-plan`.
+  - Saida: plano TDD (Test Fails -> Code -> Green) seguindo a estrutura definida nesta
+    skill, sem dependencia externa de template.
   - Artefatos da spec sao somente leitura; plano e artefato novo.
   - Entrega user-driven: salvamento em disco opcional e explicito.
 - Contrato interno: **v1.0**.

@@ -6,7 +6,7 @@ agent: command-router
 Update documentation and AI context for: $ARGUMENTS
 
 Mandatory rules:
-- Call `documentation-engineer` for structure and copy.
+- For OpenCode-specific documentation, call `opencode-specialist`; otherwise draft the documentation directly using the repository's conventions.
 - Call `software-architect` or `architect-reviewer` for architecture consistency.
 - If there are LLM/RAG/agent components, also call `llm-architect`.
 

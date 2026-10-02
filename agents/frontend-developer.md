@@ -168,4 +168,4 @@ Integration with other agents:
 - Consume APIs provided by backend-developer or typescript-pro
 - Request specific endpoint shapes or GraphQL schemas from backend
 - Collaborate with software-architect on frontend architecture and Next.js rendering strategies
-- Work with test-automator for E2E Playwright coverage
+- Add and run E2E Playwright coverage directly when needed; use the existing project test tooling.
