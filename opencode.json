@@ -10,7 +10,8 @@
     "opencode-skills",
     "opencode-vibeguard",
     "@tarquinen/opencode-dcp@latest",
-    "@ramtinj95/opencode-tokenscope@latest"
+    "@ramtinj95/opencode-tokenscope@latest",
+    "@dietrichgebert/ponytail"
   ],
   "agent": {
     "command-router": {
@@ -105,11 +106,6 @@
       "type": "remote",
       "url": "https://docs.mcp.cloudflare.com/mcp",
       "enabled": true
-    },
-    "supabase": {
-      "type": "remote",
-      "url": "https://mcp.supabase.com/mcp??project_ref=bejzfhreceediuqgglha&read_only=true",
-      "enabled": false
     }
   },
   "permission": {

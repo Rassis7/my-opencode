@@ -6,8 +6,8 @@ description: >
   nível de produto (WHY, valor de negócio, capabilities, riscos, complexidade) e uma spec a
   nível de engenharia (requirements SHALL/MUST + scenarios BDD, formato OpenSpec/SDD), com
   validação automatizada (linter), loop de correção (máx. 2 retries) e checkpoint de aprovação
-  com o usuário. NÃO cria tasks em Jira e NÃO publica em Confluence; salvar os artefatos em
-  disco é opcional e decidido pelo usuário. Use quando o usuário pedir para transformar um
+  com o usuário. Salvar os artefatos em disco é opcional e decidido pelo usuário. Use quando o
+  usuário pedir para transformar um
   pedido de feature em proposal/spec estruturada, documentar uma feature antes de implementar,
   ou revisar/formalizar requisitos de um produto.
 ---
@@ -45,8 +45,6 @@ explicitamente.
 
 ### O que você NÃO faz
 
-- Não cria tasks/Story em Jira.
-- Não publica em Confluence.
 - Não salva arquivos sem confirmação explícita do usuário.
 - Não implementa código.
 
@@ -149,7 +147,7 @@ Executar na ordem:
    (usuários/stakeholders beneficiados). Pedido vago → suposições explícitas. Pedido vazio →
    `NEEDS_INPUT`.
 2. **Mapear contexto (brownfield)**: procurar no código e documentação do projeto local os
-   sistemas/features relacionados (não há busca em Confluence/Jira). Registrar o que foi e o
+    sistemas/features relacionados. Registrar o que foi e o
    que NÃO foi encontrado em `assumptions`. Se o projeto não tiver código acessível, declarar
    a análise como não executada.
 3. **Analisar negócio**: Business Context (2-3 parágrafos), Business Value (bullet points
@@ -575,7 +573,6 @@ Entrada: `Criar feature de notificação por push quando o pedido sair para entr
 ## Versionamento
 
 - **v1.0** — Adaptação do SDD v2 para skill única do Codex.
-  - Removida toda integração com Jira/Confluence (era `jira_maker`).
   - Entrega final user-driven: salvamento em disco opcional e explícito.
   - Correções aplicadas do estudo v2:
     - Convenção única de input interna (`artifacts.*`).
